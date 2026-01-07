@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaamie Dawacare | Order Medicine Kitale</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .text-gold { color: #D4AF37; }
+        .bg-gold { background-color: #D4AF37; }
+        .border-gold { border-color: #D4AF37; }
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="bg-white text-gray-900 font-sans">
+
+    <nav class="bg-black text-white p-4 sticky top-0 z-50 border-b-2 border-gold">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold tracking-tighter uppercase">Jaamie <span class="text-gold">Dawacare</span></h1>
+            <a href="tel:+254700000000" class="bg-gold text-black px-5 py-2 rounded-full font-bold text-sm">CALL NOW</a>
+        </div>
+    </nav>
+
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <div class="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100">
+                <div class="flex flex-col md:flex-row">
+                    <div class="bg-black text-white p-10 md:w-1/2">
+                        <h3 class="text-3xl font-bold mb-4">Quick <span class="text-gold">WhatsApp</span> Order</h3>
+                        <p class="text-gray-400 mb-6">Need medicine or equipment? Fill this out and our Kitale team will chat with you instantly.</p>
+                        <ul class="space-y-4 text-sm">
+                            <li><i class="fa-solid fa-check text-gold mr-2"></i> Free Professional Consultation</li>
+                            <li><i class="fa-solid fa-check text-gold mr-2"></i> Delivery within Kitale Town</li>
+                            <li><i class="fa-solid fa-check text-gold mr-2"></i> Send Prescription Photos</li>
+                        </ul>
+                    </div>
+                    <div class="p-10 md:w-1/2">
+                        <form id="whatsappForm" class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-gray-500 mb-1">Your Name</label>
+                                <input type="text" id="name" placeholder="Full Name" class="w-full p-3 border rounded-lg focus:outline-none focus:border-gold" required>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-gray-500 mb-1">What do you need?</label>
+                                <textarea id="message" rows="3" placeholder="List your medicine or equipment..." class="w-full p-3 border rounded-lg focus:outline-none focus:border-gold" required></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-green-600 text-white font-bold py-4 rounded-lg hover:bg-green-700 transition flex items-center justify-center">
+                                <i class="fa-brands fa-whatsapp text-2xl mr-2"></i> SEND TO PHARMACY
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold">The <span class="text-gold">Kitale</span> Medical Experts</h2>
+            <p class="text-gray-600 mt-4 max-w-2xl mx-auto leading-relaxed">
+                Jaamie Dawacare provides top-notch pharmaceutical services and medical equipment. 
+                <strong>We offer free consultations</strong> to all our walk-in and online clients before any purchase to ensure your safety.
+            </p>
+            <div class="flex justify-center mt-8 space-x-6 text-gold text-4xl">
+                <i class="fa-solid fa-microscope" title="Equipment"></i>
+                <i class="fa-solid fa-user-nurse" title="Consultation"></i>
+                <i class="fa-solid fa-truck-moving" title="Delivery"></i>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black text-white py-10 px-6 text-center border-t border-gold">
+        <p class="text-gold font-bold">JAAMIE DAWACARE KITALE</p>
+        <p class="text-gray-500 text-sm mt-2">Open Mon-Sat: 8:00 AM — 8:00 PM</p>
+    </footer>
+
+    <script>
+        document.getElementById('whatsappForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // CONFIGURATION: Replace with your actual number
+            const phoneNumber = "254727880390"; 
+            
+            const name = document.getElementById('name').value;
+            const message = document.getElementById('message').value;
+            
+            // This creates the text that will appear in your WhatsApp
+            const text = `Hello Jaamie Dawacare, my name is ${name}. I would like to inquire about: ${message}`;
+            
+            // Encodes the text for the URL
+            const encodedText = encodeURIComponent(text);
+            
+            // Opens WhatsApp
+            window.open(`https://wa.me/${phoneNumber}?text=${encodedText}`, '_blank');
+        });
+    </script>
+
+</body>
+</html>
